@@ -9,7 +9,7 @@
 ## Adding CZLinkLabel to your project
 1. 将“CZNavigation”文件夹添加到项目中。
 2. #import "CZNavigationController.h"
-3. "#import "UIViewController+CZNavigationController.h""
+
 
 ## Usage
 基本使用
@@ -63,9 +63,9 @@ self.navigationBar.line.hidden = NO;
 ```
 
 ## 注意
-1.CZNavigation使用的是vc(ViewController)来管理navBar,每个vc都会有一个navBar。
-2.navBar是被添加到ViewController的view上，所以你需要将子视图添加到navBar的下方，防止挡住navBar。
-3.不要使用UITableViewController和UICollectionViewController，因为它们的视图是会滑动的，导致无法固定navBar,你可以将UITableView和UICollectionView作为vc的子视图,达到相同的效果。
+1. CZNavigation使用的是vc(ViewController)来管理navBar,每个vc都会有一个navBar。
+2. navBar是被添加到ViewController的view上，所以你需要将子视图添加到navBar的下方，防止挡住navBar。
+3. 不要使用UITableViewController和UICollectionViewController，因为它们的视图是会滑动的，导致无法固定navBar,你可以将UITableView和UICollectionView作为vc的子视图,达到相同的效果。
 
 
 
