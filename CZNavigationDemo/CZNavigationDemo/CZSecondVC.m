@@ -7,7 +7,7 @@
 //
 
 #import "CZSecondVC.h"
-#import "UIViewController+CZNavigationController.h"
+#import "CZNavigationController.h"
 
 @interface CZSecondVC ()
 
@@ -26,6 +26,16 @@
     [rightButton sizeToFit];
     [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationBar.rightButton = rightButton;
+    
+    //禁用pop交互手势
+//    CZNavigationController *navVC = (CZNavigationController *)self.navigationController;
+//    navVC.enablePopGesture = NO;
+    
+    //设置导航栏背景颜色
+//    self.navigationBar.backgroundView.backgroundColor = [UIColor orangeColor];
+    
+    //显示navBar底部线条
+//    self.navigationBar.line.hidden = NO;
 }
 
 - (void)rightButtonAction {
@@ -33,8 +43,16 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self setNavigationBarHidden:!self.navigationBarHidden animated:YES];
+    //导航栏的隐藏状态
+    BOOL isHidden = self.navigationBarHidden;
+    
+    //设置导航栏隐藏或不隐藏
+    [self setNavigationBarHidden:!isHidden animated:YES];
+    //或者 self.navigationBarHidden = !isHidden;
 }
 
+- (void)willBePopped {
+    NSLog(@"将要pop返回上一个界面。。。");
+}
 
 @end
