@@ -58,7 +58,7 @@ navVC.enablePopGesture = NO;
 //设置导航栏背景颜色
 self.navigationBar.backgroundView.backgroundColor = [UIColor orangeColor];
 
-//显示navBar底部线条
+//显示navBar底部线条,默认是隐藏的
 self.navigationBar.line.hidden = NO;
 ```
 
